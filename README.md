@@ -29,8 +29,8 @@ A modern, high-performance QR code generation API built with Spring Boot that ge
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/yourusername/qrcode.generator.git
-   cd qrcode.generator
+   git clone https://github.com/yourusername/qrcode-generator_aws_s3.git
+   cd qrcode-generator_aws_s3
    ```
 
 2. Configure AWS credentials
@@ -52,6 +52,8 @@ A modern, high-performance QR code generation API built with Spring Boot that ge
 
 1. Build the Docker image
    ```bash
+   docker build -t qrcode-generator_aws_s3:1.0 .
+   ```
    docker build --build-arg AWS_ACCESS_KEY_ID=your-access-key \
                 --build-arg AWS_SECRET_ACCESS_KEY=your-secret-key \
                 -t qrcode-generator .
@@ -59,6 +61,8 @@ A modern, high-performance QR code generation API built with Spring Boot that ge
 
 2. Run the container
    ```bash
+   docker run --env-file .env -p 8080:8080 qrcode-generator_aws_s3:1.0
+   ```
    docker run -p 8080:8080 qrcode-generator
    ```
 
@@ -113,7 +117,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👨‍💻 Author
 
-- [Your Name](https://github.com/yourusername)
+- [Caio Reis](https://github.com/caior17)
 
 ## 🤝 Contributing
 
